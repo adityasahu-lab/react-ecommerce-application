@@ -4,7 +4,7 @@ import './CheckoutPage.css'
 export function CheckoutPage() {
   return (
     <>
-      <title>Checkout</title>
+      <title>checkout</title>
 
       <div className="checkout-header">
         <div className="header-content">
@@ -16,7 +16,7 @@ export function CheckoutPage() {
           </div>
 
           <div className="checkout-header-middle-section">
-            Checkout (<a className="return-to-home-link"
+            checkout (<a className="return-to-home-link"
               href="/">3 items</a>)
           </div>
 
