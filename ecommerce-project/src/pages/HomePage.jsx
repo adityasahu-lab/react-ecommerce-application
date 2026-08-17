@@ -1,10 +1,17 @@
+import axios from 'axios'
 import { Header } from '../components/Header'
 import CheckMark from '../assets/images/icons/checkmark.png'
 import { products } from '../../starting-code/data/products'
 import './HomePage.css'
 
 export function HomePage() {
-  fetch('http://localhost:3000/api/products')
+  axios.get('http://localhost:3000/api/products')
+  // Third and shorter way to get response
+  .then((response) => {
+    console.log(response.data);
+  });
+
+  // First mehtod
   // .then((response) => {
   //   response.json().then((data) => {
   //     console.log(data);
@@ -13,11 +20,12 @@ export function HomePage() {
 
   // above does same thing as following code below
 
-  .then((response) => {
-    return response.json();
-  }).then((data) => {
-    console.log(data);
-  });
+  // Second mehtod
+  // .then((response) => {
+  //   return response.json();
+  // }).then((data) => {
+  //   console.log(data);
+  // });
 
   return (
     <>
