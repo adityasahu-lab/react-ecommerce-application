@@ -1,31 +1,18 @@
-import axios from 'axios'
-import { Header } from '../components/Header'
-import CheckMark from '../assets/images/icons/checkmark.png'
-import { products } from '../../starting-code/data/products'
-import './HomePage.css'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Header } from '../components/Header';
+import CheckMark from '../assets/images/icons/checkmark.png';
+import './HomePage.css';
 
 export function HomePage() {
-  axios.get('http://localhost:3000/api/products')
-  // Third and shorter way to get response
-  .then((response) => {
-    console.log(response.data);
-  });
+  const [products, setProducts] = useState([]);
 
-  // First mehtod
-  // .then((response) => {
-  //   response.json().then((data) => {
-  //     console.log(data);
-  //   });
-  // });
-
-  // above does same thing as following code below
-
-  // Second mehtod
-  // .then((response) => {
-  //   return response.json();
-  // }).then((data) => {
-  //   console.log(data);
-  // });
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/products')
+      .then((response) => {
+        setProducts(response.data);
+      });
+  }, []);
 
   return (
     <>
