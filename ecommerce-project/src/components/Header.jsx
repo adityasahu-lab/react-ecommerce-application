@@ -5,7 +5,8 @@ import CartIcon from '../assets/images/icons/cart-icon.png';
 import SearchIcon from '../assets/images/icons/search-icon.png';
 import './header.css';
 
-export function Header({ cart }) {
+// Used cart = [] instead of cart due to error undefined
+export function Header({ cart = [] }) {
   let totalQuantity = 0;
 
   cart.forEach((cartItem) => {
