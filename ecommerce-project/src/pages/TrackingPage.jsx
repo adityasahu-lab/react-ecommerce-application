@@ -42,6 +42,11 @@ export function TrackingPage({ cart }) {
     deliveryPercent = 100;
   }
 
+  // Highlight the correct label based on the deliver percent
+  let isPreparing = deliveryPercent < 33;
+  let isShipped = deliveryPercent >= 33;
+  let isDelivered = deliveryPercent === 100;
+
   return (
 
     <>
@@ -71,13 +76,13 @@ export function TrackingPage({ cart }) {
           <img className="product-image" src={orderProduct.product.image} />
 
           <div className="progress-labels-container">
-            <div className="progress-label">
+            <div className={`progress-label ${isPreparing}`}>
               Preparing
             </div>
-            <div className="progress-label current-status">
+            <div className={`progress-label ${isShipped}`}>
               Shipped
             </div>
-            <div className="progress-label">
+            <div className={`progress-label ${isDelivered  && 'current-status'}`}>
               Delivered
             </div>
           </div>
