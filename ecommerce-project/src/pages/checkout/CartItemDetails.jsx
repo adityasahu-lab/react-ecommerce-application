@@ -1,17 +1,20 @@
 import { formatMoney } from '../../utils/money';
 
 export function CartItemDetails({ cartItem }) {
+  // Safe navigation in case cartItem or product is undefined
+  const product = cartItem?.product || {};
+
   return (
     <>
       <img className="product-image"
-        src={cartItem.image} />
+        src={product.image} />
 
       <div className="cart-item-details">
         <div className="product-name">
-          {cartItem.name}
+          {product.name}
         </div>
         <div className="product-price">
-          {formatMoney(cartItem.priceCents)}
+          ${formatMoney(product.priceCents)}
         </div>
         <div className="product-quantity">
           <span>
