@@ -11,7 +11,6 @@ export function CartItemDetails({ cartItem, loadCart }) {
   }
 
   return (
-
     <>
       <img className="product-image"
         src={product.image} />
