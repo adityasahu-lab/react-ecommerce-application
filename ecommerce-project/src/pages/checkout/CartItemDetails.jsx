@@ -21,7 +21,7 @@ export function CartItemDetails({ cartItem, loadCart }) {
           {product.name}
         </div>
         <div className="product-price">
-          ${formatMoney(product.priceCents)}
+          {formatMoney(product.priceCents)}
         </div>
         <div className="product-quantity">
           <span>
