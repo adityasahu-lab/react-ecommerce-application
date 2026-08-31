@@ -20,6 +20,15 @@ export function CheckoutPage({ cart, loadCart }) {
     }
 
     fetchCheckoutData();
+  }, []);
+
+  useEffect(() => {
+    const fetchPaymentSummaryData = async() => {
+      let response = await axios.get('/api/payment-summary')  
+      setPaymentSummary(response.data);
+    }
+  
+    fetchPaymentSummaryData();
   }, [cart]);
 
   return (
