@@ -1,7 +1,14 @@
+import { useState } from 'react';
 import axios from 'axios';
 import { formatMoney } from '../../utils/money';
 
 export function CartItemDetails({ cartItem, loadCart }) {
+  const[quantity, setQuantity] = useState(false);
+  
+  function updateQuantity() {
+    setQuantity(true);
+  }
+
   // Safe navigation in case cartItem or product is undefined
   const product = cartItem?.product || {};
 
@@ -25,10 +32,10 @@ export function CartItemDetails({ cartItem, loadCart }) {
         <div className="product-quantity">
           <span>
             Quantity:
-              <input type="text" className="textbox" />
-             <span className="quantity-label">{cartItem.quantity}</span>
+              <input type="text" className="textbox" style={{display: quantity ? 'block' : 'none'}}/>
+              <span className="quantity-label" style={{display: quantity ? 'none' : 'block'}}>{cartItem.quantity}</span>
           </span>
-          <span className="update-quantity-link link-primary">
+          <span className="update-quantity-link link-primary" onClick={updateQuantity}>
             Update
           </span>
           <span className="delete-quantity-link link-primary"
