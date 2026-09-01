@@ -3,10 +3,14 @@ import axios from 'axios';
 import { formatMoney } from '../../utils/money';
 
 export function CartItemDetails({ cartItem, loadCart }) {
-  const[quantity, setQuantity] = useState(false);
+  const[isUpdatingQuantity, setIsUpdatingQuantity] = useState(false);
   
-  function updateQuantity() {
-    setQuantity(true);
+  const updateQuantity = () => {
+    if(isUpdatingQuantity) {
+      setIsUpdatingQuantity(false);
+    } else {
+      setIsUpdatingQuantity(true);
+    }
   }
 
   // Safe navigation in case cartItem or product is undefined
@@ -31,9 +35,9 @@ export function CartItemDetails({ cartItem, loadCart }) {
         </div>
         <div className="product-quantity">
           <span>
-            Quantity:
-              <input type="text" className="textbox" style={{display: quantity ? 'block' : 'none'}}/>
-              <span className="quantity-label" style={{display: quantity ? 'none' : 'block'}}>{cartItem.quantity}</span>
+            Quantity: {isUpdatingQuantity 
+              ? <input type="text" className="quantity-textbox" />
+              : <span className="quantity-label" style={{display: isUpdatingQuantity ? 'none' : 'block'}}>{cartItem.quantity}</span>}
           </span>
           <span className="update-quantity-link link-primary" onClick={updateQuantity}>
             Update
