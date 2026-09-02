@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router';
+import { NavLink, useNavigate, useSearchParams } from 'react-router';
 import LogoWhite from '../assets/images/logo-white.png';
 import MobileLogoWhite from '../assets/images/mobile-logo-white.png';
 import CartIcon from '../assets/images/icons/cart-icon.png';
@@ -8,21 +8,24 @@ import './header.css';
 
 // Used cart = [] instead of cart due to error undefined
 export function Header({ cart = [] }) {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
   let totalQuantity = 0;
 
   cart.forEach((cartItem) => {
     totalQuantity += cartItem.quantity;
   });
 
-  // Function to handle search input change
-   const [search, setSearch] = useState('');
+  const searchText = searchParams.get('search');
 
+  const [search, setSearch] = useState(searchText ||'');
+
+  // Function to handle search input change
   const updateSearchInput = (event) => {
     setSearch(event.target.value);
     
   }
-
-  const navigate = useNavigate();
 
   const searchProducts = () => {
     // Navigate to the home page
