@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import LogoWhite from '../assets/images/logo-white.png';
 import MobileLogoWhite from '../assets/images/mobile-logo-white.png';
 import CartIcon from '../assets/images/icons/cart-icon.png';
@@ -22,8 +22,11 @@ export function Header({ cart = [] }) {
     
   }
 
+  const navigate = useNavigate();
+
   const searchProducts = () => {
-    console.log(search);
+    // Navigate to the home page
+    navigate(`/?search=${search}`);
   }
 
   return (
