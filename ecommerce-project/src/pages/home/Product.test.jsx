@@ -8,8 +8,9 @@ vi.mock('axios');
 
 describe('Product component', () => {
   let product;
-
   let loadCart;
+  let user;
+
 
   beforeEach(() => {
     product = {
@@ -25,6 +26,8 @@ describe('Product component', () => {
     };
 
     loadCart = vi.fn();
+
+    user = userEvent.setup();
 
   });
 
@@ -56,7 +59,6 @@ describe('Product component', () => {
 
     render(<Product product={product} loadCart={loadCart} />);
 
-    const user = userEvent.setup();
     const addToCartButton = screen.getByTestId("add-to-cart-button");
     await user.click(addToCartButton);
 
@@ -76,7 +78,6 @@ describe('Product component', () => {
     
     const quantitySelector = screen.getByTestId('product-quantity-selector');
      const addToCartButton = screen.getByTestId("add-to-cart-button");
-    const user = userEvent.setup();
    
     await user.selectOptions(quantitySelector, '3');
     await user.click(addToCartButton);
