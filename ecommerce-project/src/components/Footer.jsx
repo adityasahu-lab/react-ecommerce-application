@@ -1,4 +1,7 @@
+import { NavLink } from 'react-router';
+import { NewsLetter } from './Newsletter';
 import './Footer.css';
+
 
 export function Footer() {
   return (
@@ -18,7 +21,7 @@ export function Footer() {
           <div className="link-items">
             <li><a href="#">My Account</a></li>
             <li><a href="#">Returns/Exchange</a></li>
-            <li><a href="#">Order Tracking</a></li>
+            <li><NavLink to="/orders">Order Tracking</NavLink></li>
           </div>
         </div>
 
@@ -29,6 +32,11 @@ export function Footer() {
             <li><a href="#">Facebook</a></li>
             <li><a href="#">LinkedIn</a></li>
           </div>
+        </div>
+
+        
+        <div className="footer-link">
+          <NewsLetter />
         </div>
       </ul>
       <div className="copyright-message">
