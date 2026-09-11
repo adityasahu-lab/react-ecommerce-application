@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router';
 import { NewsLetter } from './NewsLetter';
+import { ScrollToTopButton } from './ScrollToTopButton';
 import './Footer.css';
 
 
@@ -37,7 +38,7 @@ export function Footer() {
         
         <div className="footer-link">
           <NewsLetter />
-          <button className="scroll-to-top">Scroll to top</button>
+          <ScrollToTopButton />
         </div>
       </ul>
       <div className="copyright-message">

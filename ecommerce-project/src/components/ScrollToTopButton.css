@@ -1,0 +1,27 @@
+.scroll-to-top {
+  /* position: fixed;
+  bottom: 24px;
+  right: 24px; */
+  /* z-index: 999;  */
+  /* Below header (z-index: 1000) so it scrolls underneath it */
+
+  background-color: rgb(8, 79, 45);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: rgb(12, 105, 60);
+  transform: translateY(-2px);
+}
+
+.scroll-to-top:active {
+  transform: translateY(0);
+}
