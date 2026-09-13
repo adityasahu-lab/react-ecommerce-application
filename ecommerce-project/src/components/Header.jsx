@@ -4,7 +4,7 @@ import LogoWhite from '../assets/images/logo-white.png';
 import MobileLogoWhite from '../assets/images/mobile-logo-white.png';
 import CartIcon from '../assets/images/icons/cart-icon.png';
 import SearchIcon from '../assets/images/icons/search-icon.png';
-import './header.css';
+import './Header.css';
 
 // Used cart = [] instead of cart due to error undefined
 export function Header({ cart = [] }) {
@@ -52,6 +52,10 @@ export function Header({ cart = [] }) {
       </div>
 
       <div className="right-section">
+        <NavLink className="login-link header-link" to="/login">
+          <span className="orders-text">Log in</span>
+        </NavLink>
+
         <NavLink className="orders-link header-link" to="/orders">
           <span className="orders-text">Orders</span>
         </NavLink>

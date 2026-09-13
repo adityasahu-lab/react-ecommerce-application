@@ -6,6 +6,7 @@ import { CheckoutPage } from './pages/checkout/CheckoutPage';
 import { OrdersPage } from './pages/orders/OrdersPage';
 import { TrackingPage } from './pages/TrackingPage';
 import { PageNotFound } from './pages/PageNotFound';
+import { LoginPage } from './pages/login/LoginPage';
 import './App.css';
 
 window.axios = axios;
@@ -27,8 +28,9 @@ function App() {
     
     <Routes>
       <Route index element={<HomePage cart={cart} loadCart={loadCart} />} />
-      <Route path="checkout" element={<CheckoutPage cart={cart} loadCart={loadCart } />} />
+      <Route path="login" element={<LoginPage cart={cart} />} />
       <Route path="orders" element={<OrdersPage cart={cart} loadCart={loadCart} />} />
+      <Route path="checkout" element={<CheckoutPage cart={cart} loadCart={loadCart } />} />
       <Route path="tracking/:orderId/:productId" element={<TrackingPage cart={cart} />} />
       <Route path="*" element={<PageNotFound cart={cart} />} />
     </Routes>

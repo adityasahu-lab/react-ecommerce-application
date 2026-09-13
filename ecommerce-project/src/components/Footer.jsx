@@ -42,7 +42,7 @@ export function Footer() {
         </div>
       </ul>
       <div className="copyright-message">
-        <p>ALL RIGHTS RESERVED THESHOP @ 2026</p>
+        <p>ALL RIGHTS RESERVED ADITYASAHU @ 2026</p>
       </div>
     </footer>
   );

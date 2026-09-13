@@ -97,10 +97,32 @@
 }
 
 .header .right-section {
-  width: 180px;
+  /* original width*/
+  /* width: 180px; */
+  width: 240px;
+
   flex-shrink: 0;
   display: flex;
   justify-content: end;
+}
+
+.header .login-link {
+  color: white;
+
+  display: flex;
+  align-items: center;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.header .login-link.active {
+  text-decoration: underline;
+}
+
+.header .login-text {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .header .orders-link {
