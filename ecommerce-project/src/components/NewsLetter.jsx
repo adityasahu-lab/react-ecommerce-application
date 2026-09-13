@@ -3,9 +3,12 @@ import './NewsLetter.css';
 
 export function NewsLetter() {
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isThumbsupEmoji, setIsThumbsupEmoji] = useState(false);
 
   function handleSubscribe() {
     setIsSubscribed((prev) => !prev);
+    setIsThumbsupEmoji(true);
+    setTimeout(() => setIsThumbsupEmoji(false), 1000);
   }
 
   return (
@@ -14,7 +17,10 @@ export function NewsLetter() {
       <p>Sign up to receive our news, updates,and exlcusive offers.</p>
       <div className="email-input">
         <input className="email-input-field" type="email" placeholder="Your email address" />
-        <button className="subscribe-button" onClick={handleSubscribe}>{isSubscribed ? 'SUBSCRIBED' : 'SUBSCRIBE'}</button>
+        <div className="subscribe-button-container">
+          {isThumbsupEmoji && <span className="thumbsup-emoji">👍</span>}
+          <button className="subscribe-button" onClick={handleSubscribe} disabled={isSubscribed ? 'disabled' : ''}>{isSubscribed ? 'SUBSCRIBED' : 'SUBSCRIBE'}</button>
+        </div>
       </div>
     </div>
   );

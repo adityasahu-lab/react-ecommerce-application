@@ -14,6 +14,9 @@
 
 .email-input {
   border-bottom: 2px solid lightgray;
+  
+  display: flex;
+  flex-direction: row;
 }
 
 .email-input-field, .subscribe-button {
@@ -29,9 +32,28 @@
   outline: 0;
 }
 
+.subscribe-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; 
+
+  width: fit-content;
+}
+
+.thumbsup-emoji {
+  position: absolute;
+  bottom: 45px;
+  font-size: 20px;
+}
+
 .subscribe-button {
   border: none;
   background-color: transparent;
+}
+
+.subscribe-button:disabled {
+  cursor: not-allowed;
 }
 
 /* select:focus,
