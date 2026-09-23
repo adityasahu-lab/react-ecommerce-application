@@ -2,8 +2,7 @@
 
 A full-stack e-commerce learning project built with React, Vite, Express, and SQLite. The project explores how a typical online shopping experience can be broken down into smaller frontend, backend, and data-driven features.
 
-> **This is a learning and portfolio project.** It is not intended to be a production-ready commerce platform. The focus is on understanding how the different pieces of a full-stack application work together.
-> 
+This is a learning and portfolio project. It is not intended to be a production-ready commerce platform. The focus is on understanding how the different pieces of a full-stack application work together.
 
 ## Overview
 
@@ -148,26 +147,26 @@ npm run dev
 
 This project helped me develop practical skills in:
 
-→ React component architecture
-→ State and prop management
-→ User interaction handling
-→ Conditional rendering
-→ Building e-commerce UI flows
-→ Routing between pages
-→ Responsive design patterns
-→ Structuring frontend applications in a scalable way
-→ Connecting a React frontend to a backend API
-→ Working with server routes and database-backed application data
+- React component architecture
+- State and prop management
+- User interaction handling
+- Conditional rendering
+- Building e-commerce UI flows
+- Routing between pages
+- Responsive design patterns
+- Structuring frontend applications in a scalable way
+- Connecting a React frontend to a backend API
+- Working with server routes and database-backed application data
 
 ## Future Improvements
 
-→ Authentication and authorization<br>
-→ More complete database-backed order management<br>
-→ Real payment processing<br>
-→ Better validation and error handling<br>
-→ More comprehensive automated testing<br>
-→ TypeScript<br>
-→ Production deployment and infrastructure<br>
+- Authentication and authorization
+- More complete database-backed order management
+- Real payment processing
+- Better validation and error handling
+- More comprehensive automated testing
+- TypeScript
+- Production deployment and infrastructure
 
 ## License
 
